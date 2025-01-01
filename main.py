@@ -1,5 +1,6 @@
 import pygame
 from constants import *
+from player import Player
 
 def main():
     # initialize pygame
@@ -13,6 +14,11 @@ def main():
 
     # time passed since last drawn frame
     dt = 0
+    
+    x = SCREEN_WIDTH / 2
+    y = SCREEN_HEIGHT / 2
+
+    player = Player(x, y)
 
     while True:
         # if quit event occurs exit the game loop
@@ -21,6 +27,8 @@ def main():
                 return
         #fill screen with black color represented as r, g, b, a set
         screen.fill([0, 0, 0, 0])
+        #render player
+        player.draw(screen)
         # refresh screen
         pygame.display.flip()
         # poll time since last drawn frame, divide to conv msec to sec
