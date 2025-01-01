@@ -29,6 +29,7 @@ def main():
         screen.fill([0, 0, 0, 0])
         #render player
         player.draw(screen)
+        player.update(dt)
         # refresh screen
         pygame.display.flip()
         # poll time since last drawn frame, divide to conv msec to sec
